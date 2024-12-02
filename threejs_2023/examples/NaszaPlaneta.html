@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Nasza strona</title>
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      #c {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+	  #header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+		opacity:70%;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        z-index: 100;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+        border-bottom: 2px solid rgba(187, 82, 228, 0.8);
+      }
+      #info-hub {
+        position: absolute;
+        top: 100px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+        
+        z-index: 100;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+		opacity: 70%;
+		border: 2px solid rgba(187, 82, 228, 0.8); 
+        animation: glow 1.5s infinite;
+		height: 70%;
+		width: 20%;
+      }
+      #info-hub h2 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+      }
+      #info-hub p {
+        margin: 5px 0;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+	  @keyframes glow {
+        0% {
+          box-shadow: 0 0 10px rgba(187, 82, 228, 0.8);
+        }
+        50% {
+          box-shadow: 0 0 20px rgba(187, 82, 228, 0.8);
+        }
+        100% {
+          box-shadow: 0 0 10px rgba(187, 82, 228, 0.8);
+        }
+      }
+	  /* strzalki */
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 36px;
+        color: white;
+        
+        padding: 10px;
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+        z-index: 100;
+        
+        user-select: none;
+      }
+
+      #arrow-left {
+        left: 25%;
+      }
+
+      #arrow-right {
+        right: 25%;
+
+      }
+
+      .arrow:hover {
+        
+        color: rgb(189, 32, 220);
+      }
+
+	  #glowing-btn {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 30px;
+        font-size: 18px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 2px solid rgba(0, 0, 0, 0.7);
+        border-radius: 25px;
+        cursor: pointer;
+        z-index: 100;
+		width:50%;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(187, 82, 228, 0.8);
+        animation: glowing 1.5s infinite ease-in-out;
+      }
+	  #glowing-btn:hover {
+        background-color: rgba(187, 82, 228, 0.6);
+		border: 2px solid rgba(187, 82, 228, 0.6);
+
+      }
+      #glowing-btnSmall {
+        position: absolute;
+        top: 15px;
+        right:15px;
+        transform: translateX(-50%);
+        font-size: 18px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 2px solid rgba(0, 0, 0, 0.7);
+        border-radius: 25px;
+        cursor: pointer;
+        z-index: 100;
+		    width:60px;
+        height:60px;
+        box-shadow: 0 0 10px rgba(187, 82, 228, 0.8);
+        animation: glowing 1.5s infinite ease-in-out;
+      }
+	  #glowing-btnSmall:hover {
+        background-color: rgba(187, 82, 228, 0.6);
+		border: 2px solid rgba(187, 82, 228, 0.6);
+
+      }
+
+      @keyframes glowing {
+        0% {
+          box-shadow: 0 0 10px rgba(187, 82, 228, 0.8);
+        }
+        50% {
+          box-shadow: 0 0 20px rgba(187, 82, 228, 1.0);
+        }
+        100% {
+          box-shadow: 0 0 10px rgba(187, 82, 228, 0.8);
+        }
+      }
+      @media only screen and (max-width: 1200px) {
+        #arrow-left
+        {
+          top:95%;
+        }
+        #arrow-right
+        {
+          top:95%;
+        }
+        #info-hub p{
+          display: none;
+        }
+        
+        #info-hub{
+          height:30px;
+          top:2%;
+          width:200px;
+       
+          right:135px;
+        }
+        #glowing-btn{
+          display:none;
+        }
+       }
+       @media only screen and (min-width: 1200px) {
+        #glowing-btnSmall{
+          display:none;
+        }
+       }
+
+    </style>
+  </head>
+  <body>
+	<!--<div id="header">Ziemia</div>-->
+
+    <div id="info-hub">
+      <h2>Ziemia</h2>
+      <p><strong>Planeta:</strong> Ziemia</p>
+      <p><strong>Powierzchnia:</strong> Powierzchnię w 70,8% zajmuje woda wszechoceanu zawarta w morzach i oceanach; pozostałe 29,2% stanowią kontynenty i wyspy, na powierzchni których znajdują się jeziora oraz inne źródła wody tworzące hydrosferę.</p>
+      <p><strong>Wnętrze:</strong> składa się z grubego i w dużej mierze stałego płaszcza, płynnego jądra zewnętrznego (generującego pole magnetyczne) oraz składającego się z żelaza stałego jądra wewnętrznego.</p>
+
+	  <div id="glowing-btn">Zobacz wewnątrz planety</div>
+    </div>
+    <!--to tez pokazuje wewnatrz planety, ale pojawia sie tylko gdy ekran jest zmniejszony-->
+    <div id="glowing-btnSmall"></div>
+	<div id="arrow-left" class="arrow">&#9664;</div>
+    <div id="arrow-right" class="arrow">&#9654;</div>
+
+	
+
+    <canvas id="c"></canvas>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../build/three.module.js",
+          "three/addons/": "../../examples/jsm/"
+        }
+      }
+    </script>
+
+    <script type="module">
+      import * as THREE from 'three';
+      import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+      import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
+
+      function main() {
+        const canvas = document.querySelector('#c');
+        const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
+
+        const fov = 45;
+        const aspect = 2; 
+        const near = 0.1;
+        const far = 100;
+        const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+        camera.position.set(0, 5, 20);
+
+        const controls = new OrbitControls(camera, canvas);
+        controls.target.set(-3, 5, 11);
+        controls.update(); 
+
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color('black');
+
+        
+
+        // w miejsce planety jest kula
+        {
+          const sphereRadius = 3;
+          const sphereWidthDivisions = 32;
+          const sphereHeightDivisions = 16;
+          const sphereGeo = new THREE.SphereGeometry(
+            sphereRadius,
+            sphereWidthDivisions,
+            sphereHeightDivisions
+          );
+          const sphereMat = new THREE.MeshPhongMaterial({ color: '#CA8' });
+          const mesh = new THREE.Mesh(sphereGeo, sphereMat);
+          mesh.position.set(-sphereRadius, sphereRadius + 2, sphereRadius + 8);
+          scene.add(mesh);
+        }
+
+        //kule tworzace tlo
+        let rotujacaSieKula2;
+		{
+		  const loader = new THREE.TextureLoader();
+          const texture = loader.load('img/stars.png');
+          texture.colorSpace = THREE.SRGBColorSpace;
+
+          const sphereMat = new THREE.MeshPhongMaterial({
+            map: texture,
+			side: THREE.DoubleSide,
+
+            transparent: true,
+            alphaTest: 0.1,
+          });          
+			
+          const sphereRadius = 30;
+          const sphereWidthDivisions = 32;
+          const sphereHeightDivisions = 16;
+          const sphereGeo = new THREE.SphereGeometry(
+            sphereRadius,
+            sphereWidthDivisions,
+            sphereHeightDivisions
+          );
+          rotujacaSieKula2 = new THREE.Mesh(sphereGeo, sphereMat);
+          rotujacaSieKula2.position.set(-3, 5, 10);
+          scene.add(rotujacaSieKula2);
+        }
+
+    let rotujacaSieKula;
+		{
+		  const loader = new THREE.TextureLoader();
+          const texture = loader.load('img/milky-way-1.png');
+          texture.colorSpace = THREE.SRGBColorSpace;
+
+          const sphereMat = new THREE.MeshPhongMaterial({
+            map: texture,
+			      side: THREE.DoubleSide,
+
+            transparent: true,
+            alphaTest: 0.1,
+          });          
+			
+          const sphereRadius = 35;
+          const sphereWidthDivisions = 32;
+          const sphereHeightDivisions = 16;
+          const sphereGeo = new THREE.SphereGeometry(
+            sphereRadius,
+            sphereWidthDivisions,
+            sphereHeightDivisions
+          );
+          rotujacaSieKula = new THREE.Mesh(sphereGeo, sphereMat);
+          rotujacaSieKula.position.set(-3, 5, 10);
+          scene.add(rotujacaSieKula);
+        }
+
+		
+
+        // swiatlo [do poprawy]
+        {
+          const skyColor = 0xB1E1FF; // light blue
+          const groundColor = 0xB97A20; // brownish orange
+          const intensity = 1;
+          const light = new THREE.HemisphereLight(skyColor, groundColor, intensity);
+          scene.add(light);
+        }
+
+        function resizeRendererToDisplaySize(renderer) {
+          const canvas = renderer.domElement;
+          const width = canvas.clientWidth;
+          const height = canvas.clientHeight;
+          const needResize = canvas.width !== width || canvas.height !== height;
+          if (needResize) {
+            renderer.setSize(width, height, false);
+          }
+          return needResize;
+        }
+
+        function render() {
+          if (resizeRendererToDisplaySize(renderer)) {
+            const canvas = renderer.domElement;
+            camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            camera.updateProjectionMatrix();
+          }
+          
+          //rotacja kul
+          if (rotujacaSieKula) {
+            rotujacaSieKula.rotation.y += 0.001; 
+          }
+          if (rotujacaSieKula2) {
+            rotujacaSieKula2.rotation.y += 0.002; 
+          }
+          renderer.render(scene, camera);
+
+          requestAnimationFrame(render);
+        }
+
+        requestAnimationFrame(render);
+      }
+
+      main();
+    </script>
+  </body>
+</html>
