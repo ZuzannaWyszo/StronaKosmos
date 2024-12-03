@@ -4,6 +4,7 @@ import { OrbitControls, Stars } from '@react-three/drei';
 import Planet from './Planet';
 import Navigation from './Navigation';
 import InfoButton from './InfoButton'
+
 const SolarSystem = () => {
   const planets = [
     { name: 'Ziemia', modelPath: '/models/earth.glb',description: 'Trzecia planeta od Słońca, znana jako Błękitna Planeta.'  },
@@ -26,11 +27,11 @@ const SolarSystem = () => {
   
   return (
     <div style={{ width: '100vw', height: '100vh', background:'black' }}>
-      <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+      <Canvas camera={{ position: [0, 0, 50], fov: 50 }}>
         <ambientLight />
         <pointLight position={[10, 10, 10]} intensity={100} />
-        <directionalLight intensity={5} position={[100,0,74]}></directionalLight>
-        <OrbitControls enablePan={false} maxDistance={100} minDistance={1}/>
+        <directionalLight intensity={5} position={[20,0,100]} ></directionalLight>
+        <OrbitControls enablePan={false} maxDistance={100} minDistance={1} autoRotate={false} autoRotateSpeed={1}/>
         <Stars  />
         
         {planets.map((planet, index) => (
