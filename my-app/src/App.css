@@ -1,0 +1,23 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: auto;
+  padding: 10px;
+}
+
+canvas {
+  flex-grow: 1;
+}
