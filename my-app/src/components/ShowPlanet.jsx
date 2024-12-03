@@ -30,7 +30,7 @@ const SolarSystem = () => {
         <ambientLight />
         <pointLight position={[10, 10, 10]} intensity={100} />
         <directionalLight intensity={5} position={[100,0,74]}></directionalLight>
-        <OrbitControls />
+        <OrbitControls enablePan={false} maxDistance={100} minDistance={1}/>
         <Stars  />
         
         {planets.map((planet, index) => (

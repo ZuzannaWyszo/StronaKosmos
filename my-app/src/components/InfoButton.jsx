@@ -30,9 +30,9 @@ const InfoButton = ({ planet, onToggle }) => {
         <div
           style={{
             position: 'absolute',
-            bottom: '70px',
-            left: '50%',
-            transform: 'translateX(-50%)',
+            top: '50%', 
+            right: '20px', 
+            transform: 'translateY(-50%)', 
             padding: '20px',
             backgroundColor: 'rgba(0, 0, 0, 0.7)',
             color: 'white',
