@@ -15,7 +15,7 @@ export const planets = [
     },
     { 
       name: 'Wenus', 
-      modelPath: '/models/saturn_animacja.glb', 
+      modelPath: '/models/innerCore_animation_close.glb', 
       description: 'Druga planeta od Słońca, znana z wysokiej temperatury i gęstej atmosfery.',
       mass:'4.87 × 10²⁴ kg (0.815 Ziemi)',
       diameter:'12,104 km',

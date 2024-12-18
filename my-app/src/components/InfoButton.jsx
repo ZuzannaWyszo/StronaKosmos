@@ -1,27 +1,19 @@
+
 import React, { useState } from 'react';
 
 const InfoButton = ({ planet, onToggle }) => {
   const [showInfo, setShowInfo] = useState(false);
   const [isDis, setIsDis] = useState(false);
-  const [isVisible, setIsVisible] = useState(false); 
-
   const toggleInfo = () => {
-    if (showInfo) {
-      setShowInfo(false);
-      setTimeout(() => setIsVisible(false), 1500); 
-    } else {
-      setIsVisible(true);
-      setTimeout(() => setShowInfo(true), 10); 
-    }
-    onToggle && onToggle(!showInfo);
-
-    
+    const newShowInfo = !showInfo;
+    setShowInfo(newShowInfo);
+    onToggle && onToggle(newShowInfo); 
     setIsDis(true);
-    setTimeout(() => {
+    setTimeout(function(){
       setIsDis(false);
-    }, 2500);
+    },2500)
   };
-
+  
   return (
     <div>
       <button
@@ -34,18 +26,12 @@ const InfoButton = ({ planet, onToggle }) => {
           transform: 'translateX(-50%)',
           padding: '10px 20px',
           fontSize: '16px',
-          backgroundColor: 'rgba(255, 255, 255, 0.2)', 
-          color: 'white',
-          border: '1px solid white',
-          borderRadius: '8px',
-          cursor: isDis ? 'default' : 'pointer',
-          opacity: isDis ? 0.5 : 1, 
-          transition: 'opacity 1.5s ease', 
         }}
       >
         {showInfo ? 'Ukryj informacje i zamknij planetę' : 'Pokaż informacje i otwórz planetę'}
       </button>
-      {isVisible && (
+
+      {showInfo && (
         <div
           style={{
             position: 'absolute',
@@ -60,14 +46,15 @@ const InfoButton = ({ planet, onToggle }) => {
             textAlign: 'center',
             overflowY: 'auto',
             maxHeight: '60vh',
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            opacity: showInfo ? 1 : 0, 
-            transition: 'opacity 1.5s ease', 
+            scrollbarWidth: 'none', 
+            msOverflowStyle: 'none', 
           }}
         >
           <h3>{planet.name}</h3>
           <p>{planet.description}</p>
+
+          
+          
           <table
             style={{
               width: '100%',
@@ -116,8 +103,8 @@ const InfoButton = ({ planet, onToggle }) => {
             </tbody>
           </table>
         </div>
+        
       )}
-      
     </div>
   );
 };
