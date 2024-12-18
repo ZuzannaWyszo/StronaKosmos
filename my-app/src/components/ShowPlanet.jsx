@@ -5,12 +5,14 @@ import Planet from './Planet';
 import Navigation from './Navigation';
 import InfoButton from './InfoButton';
 import { planets } from './planetData';
+import PlanetMenu from './PlanetMenu';
 
 const SolarSystem = () => {
   
 
   const [currentPlanet, setCurrentPlanet] = useState(0);
-  const [isPlanetOpen, setIsPlanetOpen] = useState(false); 
+  const [isPlanetOpen, setIsPlanetOpen] = useState(false);
+   
 
   const handleNext = () => {
     setCurrentPlanet((prev) => (prev + 1) % planets.length);
@@ -24,6 +26,11 @@ const SolarSystem = () => {
 
   const handleTogglePlanet = (shouldOpen) => {
     setIsPlanetOpen(shouldOpen);
+  };
+
+  const handlePlanetSelect = (planetIndex) => {
+    setCurrentPlanet(planetIndex);
+    setIsPlanetOpen(false); 
   };
 
   return (
@@ -47,6 +54,7 @@ const SolarSystem = () => {
       </Canvas>
       <Navigation onNext={handleNext} onPrev={handlePrev} disabled={isPlanetOpen}/>
       <InfoButton planet={planets[currentPlanet]} onToggle={handleTogglePlanet} />
+      <PlanetMenu planets={planets} onPlanetSelect={handlePlanetSelect} isDis={isPlanetOpen} />
     </div>
   );
 };
