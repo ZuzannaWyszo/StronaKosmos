@@ -46,6 +46,7 @@ const Planet = ({ modelPath, position, visible, isOpen }) => {
     if (mixerRef.current) {
       mixerRef.current.update(delta);
     }
+    
   });
 
   return (
