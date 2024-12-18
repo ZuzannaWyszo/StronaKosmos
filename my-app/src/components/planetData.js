@@ -16,7 +16,7 @@ export const planets = [
     },
     { 
       name: 'Wenus', 
-      modelPath: '/models/ziema_animacja.glb', 
+      modelPath: '/models/venus_animacja.glb', 
       description: 'Pierwsza i najmniejsza planeta układu słonecznego, cechuje się największymi wachaniami temperatury w Układzie Słonecznym.' ,
       mass:'4.87 × 10²⁴ kg (0.815 Ziemi)',
       diameter:'12,104 km',

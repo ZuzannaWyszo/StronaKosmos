@@ -38,7 +38,7 @@ const SolarSystem = () => {
       <Canvas camera={{ position: [0, 0, 15], fov: 50 }}>
         <ambientLight />
         <pointLight position={[10, 10, 10]} intensity={10} />
-        <directionalLight intensity={1} position={[20, 0, 100]} />
+        <directionalLight intensity={5} position={[20, 0, 100]} />
         <OrbitControls enablePan={false} maxDistance={100} minDistance={3} autoRotate={false} autoRotateSpeed={1} />
         <Stars />
 
