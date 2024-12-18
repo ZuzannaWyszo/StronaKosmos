@@ -1,6 +1,14 @@
 import React from 'react';
 
-const Navigation = ({ onNext, onPrev }) => {
+const Navigation = ({ onNext, onPrev, disabled }) => {
+  const buttonStyle = {
+    padding: '10px',
+    fontSize: '16px',
+    transition: 'opacity 0.3s ease, visibility 0.3s ease',
+    opacity: disabled ? 0 : 1,
+    visibility: disabled ? 'hidden' : 'visible',
+  };
+
   return (
     <div
       style={{
@@ -13,13 +21,20 @@ const Navigation = ({ onNext, onPrev }) => {
         gap: '10px',
       }}
     >
-      <button onClick={onPrev} style={{ padding: '10px', fontSize: '16px' }}>
-      ←
+      <button
+        onClick={onPrev}
+        style={buttonStyle}
+        disabled={disabled}
+      >
+        ←
       </button>
-      <button onClick={onNext} style={{ padding: '10px', fontSize: '16px' }}>
-      →
+      <button
+        onClick={onNext}
+        style={buttonStyle}
+        disabled={disabled}
+      >
+        →
       </button>
-      
     </div>
   );
 };
